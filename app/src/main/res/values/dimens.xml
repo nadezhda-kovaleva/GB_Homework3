@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="TV2_text_size">45sp</dimen>
+    <dimen name="TV1_width">222dp</dimen>
+    <dimen name="TV1_height">63dp</dimen>
+    <dimen name="TV1_MB">64dp</dimen>
+    <dimen name="TV1_textSize">45sp</dimen>
+    <dimen name="TV2_width">77dp</dimen>
+    <dimen name="TV2_height">73dp</dimen>
+    <dimen name="Btn_equal_width">87dp</dimen>
+    <dimen name="Btn_equal_height">98dp</dimen>
+    <dimen name="btn_equal_w">87dp</dimen>
+    <dimen name="bnt_equals_h">98dp</dimen>
+    <dimen name="TV2_land_width">75dp</dimen>
+    <dimen name="tv2_land_height">65dp</dimen>
+    <dimen name="tv2_land_width">60dp</dimen>
+</resources>
