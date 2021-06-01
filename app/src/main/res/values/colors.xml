@@ -7,4 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="TV1_Backgroundcolor">#8975bc</color>
+    <color name="TV2_background_color">#2583d1</color>
 </resources>

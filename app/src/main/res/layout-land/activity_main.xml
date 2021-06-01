@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/image"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
 
     <Button
         android:id="@+id/button_clear"
@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toStartOf="@id/button_div"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@id/button8"
         app:layout_constraintEnd_toStartOf="@+id/button_mult"
         app:layout_constraintStart_toEndOf="@+id/button_clear"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@id/button9"
         app:layout_constraintEnd_toStartOf="@+id/button_return"
         app:layout_constraintStart_toEndOf="@+id/button_div"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_min"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_mult"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -207,29 +207,38 @@
         android:id="@+id/textView"
         android:layout_width="@dimen/TV1_width"
         android:layout_height="@dimen/TV1_height"
-        android:layout_marginBottom="@dimen/TV1_MB"
         android:background="@color/TV1_Backgroundcolor"
         android:text=""
         android:textColor="@color/black"
         android:textSize="@dimen/TV1_textSize"
-        app:layout_constraintBottom_toTopOf="@+id/button_div"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_goneMarginLeft="25dp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="@dimen/TV2_width"
-        android:layout_height="@dimen/TV2_height"
+        android:layout_width="@dimen/tv2_land_width"
+        android:layout_height="@dimen/tv2_land_width"
         android:background="@color/TV2_background_color"
         android:gravity="center"
         android:text=""
         android:textColor="@color/white"
         android:textSize="@dimen/TV2_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
