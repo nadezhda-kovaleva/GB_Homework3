@@ -14,4 +14,9 @@
     <dimen name="TV2_land_width">75dp</dimen>
     <dimen name="tv2_land_height">65dp</dimen>
     <dimen name="tv2_land_width">60dp</dimen>
+    <dimen name="radioButtonWidth">340dp</dimen>
+    <dimen name="radioButtonHeight">65dp</dimen>
+    <dimen name="radioButtonTextSize">25sp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen  name="corners">10.0dip</dimen>
 </resources>
