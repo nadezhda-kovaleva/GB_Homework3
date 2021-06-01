@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="TV1_Backgroundcolor">#8975bc</color>
     <color name="TV2_background_color">#2583d1</color>
+    <color name="window_calc_color">#CBFFFFFF</color>
+    <color name="number_button_color">#ffb621</color>
+    <color name="calc_button_color">#bf623f</color>
+    <color name="operation_button_color">#769d6c</color>
+    <color name="startColorGradient">#9CFFFFFE</color>
+    <color name="endColorGradient">#FFFFFF</color>
 </resources>

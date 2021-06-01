@@ -19,4 +19,6 @@
     <string name="button_proc">%</string>
     <string name="_0">0</string>
     <string name="button_comma">,</string>
+    <string name="RadioButton1_text">Светлая тема</string>
+    <string name="RadioButton2_text">Темная тема</string>
 </resources>

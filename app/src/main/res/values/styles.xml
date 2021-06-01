@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonNumber" parent="Theme.Homework3">
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="background">@drawable/button_stile_3</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ButtonCalc" parent="Theme.Homework3">
+        <item name="colorPrimary">@color/calc_button_color</item>
+        <item name="background">@drawable/button_stile_3</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="OperationCalc" parent="Theme.Homework3">
+        <item name="colorPrimary">@color/operation_button_color</item>
+        <item name="background">@drawable/button_stile_2</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>

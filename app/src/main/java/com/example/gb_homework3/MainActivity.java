@@ -2,7 +2,9 @@ package com.example.gb_homework3;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.view.View;
@@ -19,14 +21,82 @@ public class MainActivity extends AppCompatActivity {
     private TextView textOperation;
     static String operator = "0";
 
+    private static final String AppTheme = "Theme.Homework4";
+    private static final int MyLightCodeStyle = 0;
+    private static final int MyDarkCodeStyle = 1;
+    private static final String NameSharedPreference = "SharedPref";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme(R.style.MyDarkCoolStyle));
         setContentView(R.layout.activity_main);
+
+        checkNightModeActivated();
 
         calc = new Calculator();
         initView();
+        initThemeChooser();
     }
+
+    public void checkNightModeActivated() {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        if (sharedPref.getInt(AppTheme, 0) == 0) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
+    private void initThemeChooser() {
+        initRadioButton(findViewById(R.id.radioButtonMyCoolStyle),
+                MyLightCodeStyle);
+        initRadioButton(findViewById(R.id.radioButtonDarkAction),
+                MyDarkCodeStyle);
+    }
+
+    private void initRadioButton(View button, final int codeStyle){
+        button.setOnClickListener(v -> {
+            setAppTheme(codeStyle);
+            if (codeStyle == MyLightCodeStyle) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+            recreate();
+        });
+    }
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleId(getCodeStyle(codeStyle));
+    }
+
+    // Чтение настроек, параметр «тема»
+    private int getCodeStyle(int codeStyle){
+        // Работаем через специальный класс сохранения и чтения настроек
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        //Прочитать тему, если настройка не найдена - взять по умолчанию
+        return sharedPref.getInt(AppTheme, codeStyle);
+    }
+
+    // Сохранение настроек
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        // Настройки сохраняются посредством специального класса editor.
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(AppTheme, codeStyle);
+        editor.apply();
+    }
+
+    private int codeStyleToStyleId(int codeStyle){
+        if (codeStyle == MyLightCodeStyle) {
+            setTheme(R.style.MyCoolStyle);
+            return R.style.MyCoolStyle;
+        }
+        setTheme(R.style.MyDarkCoolStyle);
+        return R.style.MyDarkCoolStyle;
+    }
+
 
     private void initView() {
         text = findViewById(R.id.textView);
